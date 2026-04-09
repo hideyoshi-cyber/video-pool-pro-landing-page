@@ -174,10 +174,19 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  background: url('app-screenshot.png') center center / cover no-repeat;
+  filter: brightness(0.3) saturate(0.5);
+  z-index: 0;
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 1;
 }
 
 .hero-glow {
@@ -196,17 +205,11 @@ img { max-width: 100%; display: block; }
   background: rgba(0, 119, 182, 0.05);
 }
 
-.hero-wave {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 200px;
-  background: linear-gradient(to top, var(--bg), transparent);
-}
-
 .hero-content {
   position: relative;
   text-align: center;
   max-width: 800px;
+  z-index: 2;
 }
 
 .hero-badge {
