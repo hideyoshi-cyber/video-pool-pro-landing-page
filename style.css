@@ -471,9 +471,9 @@ img { max-width: 100%; display: block; }
 }
 
 .showcase-card-featured .showcase-icon {
-  background: rgba(0, 168, 232, 0.1);
-  border-color: rgba(0, 168, 232, 0.2);
-  color: var(--accent);
+  background: rgba(196, 62, 28, 0.12);
+  border-color: rgba(196, 62, 28, 0.25);
+  color: #C43E1C;
 }
 
 .showcase-card h3 {
