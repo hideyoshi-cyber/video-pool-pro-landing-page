@@ -400,6 +400,29 @@ img { max-width: 100%; display: block; }
   margin: 0 auto;
 }
 
+/* ============ DEMO VIDEO ============ */
+.section-demo {
+  padding: 0 24px 80px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 3;
+}
+
+.demo-video-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border-hover);
+  box-shadow: 0 0 40px rgba(0, 168, 232, 0.1);
+}
+
+.demo-video {
+  width: 100%;
+  display: block;
+  background: #000;
+}
+
 /* ============ PAIN POINTS ============ */
 .pain-grid {
   display: grid;
