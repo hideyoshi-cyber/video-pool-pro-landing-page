@@ -38,6 +38,17 @@ body {
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
+.text-gradient {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-pptx {
+  color: #D35230;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
