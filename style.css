@@ -452,20 +452,38 @@ img { max-width: 100%; display: block; }
   transform: translateY(-4px);
 }
 
-.showcase-image {
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  margin-bottom: 24px;
-  border: 1px solid var(--border);
+.showcase-card-bg {
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-end;
 }
-.showcase-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.4s ease;
+
+.showcase-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(4, 8, 16, 0.3) 0%,
+    rgba(4, 8, 16, 0.6) 30%,
+    rgba(4, 8, 16, 0.88) 60%,
+    rgba(4, 8, 16, 0.96) 100%
+  );
+  border-radius: var(--radius);
+  z-index: 1;
 }
-.showcase-card:hover .showcase-image img {
-  transform: scale(1.03);
+
+.showcase-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 0;
+}
+
+.showcase-card-bg .showcase-icon {
+  width: 48px; height: 48px;
+  margin-bottom: 16px;
 }
 
 .showcase-card-featured {
