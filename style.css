@@ -3,20 +3,21 @@
    ============================================================ */
 
 :root {
-  --bg: #050a12;
-  --bg-card: rgba(15, 22, 40, 0.7);
-  --bg-card-hover: rgba(20, 30, 55, 0.8);
-  --border: rgba(255, 255, 255, 0.06);
-  --border-hover: rgba(100, 180, 255, 0.2);
-  --text: #e2e8f0;
-  --text-dim: #8892a6;
+  --bg: #040810;
+  --bg-card: rgba(8, 16, 32, 0.85);
+  --bg-card-hover: rgba(12, 24, 48, 0.9);
+  --border: rgba(255, 255, 255, 0.05);
+  --border-hover: rgba(0, 168, 232, 0.25);
+  --text: #e8ecf2;
+  --text-dim: #8a95a8;
   --text-dimmer: #4a5568;
-  --accent: #3b9eff;
-  --accent-2: #0070f3;
-  --accent-glow: rgba(59, 158, 255, 0.15);
-  --gradient: linear-gradient(135deg, #3b9eff 0%, #0070f3 50%, #8b5cf6 100%);
-  --radius: 16px;
-  --radius-sm: 10px;
+  --accent: #00a8e8;
+  --accent-2: #0077b6;
+  --accent-glow: rgba(0, 168, 232, 0.12);
+  --gradient: linear-gradient(135deg, #00a8e8 0%, #0077b6 100%);
+  --gradient-diagonal: linear-gradient(135deg, #00a8e8 0%, #005f8c 100%);
+  --radius: 12px;
+  --radius-sm: 8px;
   --font: 'Inter', 'Noto Sans JP', -apple-system, sans-serif;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -176,12 +177,12 @@ img { max-width: 100%; display: block; }
 .hero-glow-1 {
   width: 600px; height: 600px;
   top: -200px; left: -100px;
-  background: rgba(59, 158, 255, 0.08);
+  background: rgba(0, 168, 232, 0.07);
 }
 .hero-glow-2 {
   width: 500px; height: 500px;
   bottom: -100px; right: -100px;
-  background: rgba(139, 92, 246, 0.06);
+  background: rgba(0, 119, 182, 0.05);
 }
 
 .hero-wave {
@@ -327,10 +328,20 @@ img { max-width: 100%; display: block; }
 /* ============ SECTIONS ============ */
 .section {
   padding: 120px 0;
+  position: relative;
 }
 
 .section-dark {
-  background: rgba(10, 15, 25, 0.6);
+  background: rgba(6, 12, 22, 0.8);
+}
+
+/* Diagonal accent divider between sections */
+.section-dark::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient);
 }
 
 .section-header {
@@ -339,13 +350,23 @@ img { max-width: 100%; display: block; }
 }
 
 .section-label {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.15em;
   color: var(--accent);
   margin-bottom: 16px;
   text-transform: uppercase;
+}
+
+.section-label::before,
+.section-label::after {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
 }
 
 .section-header h2 {
@@ -377,6 +398,15 @@ img { max-width: 100%; display: block; }
   padding: 40px 32px;
   text-align: center;
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.pain-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient);
 }
 .pain-card:hover {
   border-color: var(--border-hover);
@@ -423,9 +453,9 @@ img { max-width: 100%; display: block; }
 }
 
 .showcase-card-featured {
-  border-color: rgba(219, 85, 51, 0.3);
-  background: linear-gradient(135deg, rgba(219, 85, 51, 0.04) 0%, rgba(59, 158, 255, 0.04) 100%);
-  box-shadow: 0 0 60px rgba(219, 85, 51, 0.06);
+  border-color: rgba(0, 168, 232, 0.3);
+  background: linear-gradient(135deg, rgba(0, 168, 232, 0.06) 0%, rgba(0, 119, 182, 0.04) 100%);
+  box-shadow: 0 0 60px rgba(0, 168, 232, 0.06);
 }
 
 .showcase-icon {
@@ -441,9 +471,9 @@ img { max-width: 100%; display: block; }
 }
 
 .showcase-card-featured .showcase-icon {
-  background: rgba(219, 85, 51, 0.1);
-  border-color: rgba(219, 85, 51, 0.2);
-  color: #db5533;
+  background: rgba(0, 168, 232, 0.1);
+  border-color: rgba(0, 168, 232, 0.2);
+  color: var(--accent);
 }
 
 .showcase-card h3 {
@@ -478,9 +508,10 @@ img { max-width: 100%; display: block; }
 }
 
 .showcase-tags .tag-highlight {
-  background: rgba(219, 85, 51, 0.12);
-  border-color: rgba(219, 85, 51, 0.25);
-  color: #e86a4f;
+  background: rgba(0, 168, 232, 0.15);
+  border-color: rgba(0, 168, 232, 0.3);
+  color: var(--accent);
+  font-weight: 800;
 }
 
 .showcase-note {
@@ -510,6 +541,20 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius);
   padding: 36px 28px;
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.feature-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 24px;
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  transition: var(--transition);
+}
+.feature-card:hover::after {
+  width: 80px;
 }
 .feature-card:hover {
   border-color: var(--border-hover);
@@ -603,9 +648,9 @@ img { max-width: 100%; display: block; }
 }
 
 .pricing-card-featured {
-  border-color: rgba(59, 158, 255, 0.3);
-  background: rgba(59, 158, 255, 0.04);
-  box-shadow: 0 0 80px rgba(59, 158, 255, 0.08);
+  border-color: rgba(0, 168, 232, 0.3);
+  background: rgba(0, 168, 232, 0.04);
+  box-shadow: 0 0 80px rgba(0, 168, 232, 0.06);
 }
 
 .pricing-badge {
