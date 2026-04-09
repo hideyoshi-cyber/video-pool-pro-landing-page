@@ -279,54 +279,85 @@
         <h2>シンプルな<span class="text-gradient">料金体系</span></h2>
         <p>サブスクではありません。一度の購入で、ずっと使えます。</p>
       </div>
-      <div class="pricing-grid">
-        <div class="pricing-card fade-up">
-          <div class="pricing-label">FREE TRIAL</div>
-          <h3>試用版</h3>
-          <div class="pricing-price">
-            <span class="price-amount">¥0</span>
-            <span class="price-period">14日間</span>
+
+      <!-- 料金表示 -->
+      <div class="pricing-showcase fade-up">
+        <div class="pricing-main-card">
+          <div class="pricing-badge">買い切り型</div>
+          <div class="pricing-price-lg">
+            <span class="price-currency">¥</span><span class="price-amount-lg">29,800</span>
+            <span class="price-tax">税込</span>
           </div>
-          <ul class="pricing-features">
-            <li>✓ 全機能利用可能</li>
-            <li>✓ 書き出し無制限</li>
-            <li>✓ クレジットカード不要</li>
-            <li>✓ 自動課金なし</li>
-          </ul>
-          <a href="#download" class="btn btn-outline">無料で試す</a>
-        </div>
-        <div class="pricing-card pricing-card-featured fade-up" style="animation-delay: 0.1s;">
-          <div class="pricing-badge">BEST VALUE</div>
-          <div class="pricing-label">PRO LICENSE</div>
-          <h3>プロ版</h3>
-          <div class="pricing-price">
-            <span class="price-amount">¥29,800</span>
-            <span class="price-period">買い切り（税込）</span>
-          </div>
-          <ul class="pricing-features">
+          <ul class="pricing-features-compact">
             <li>✓ 全機能利用可能</li>
             <li>✓ 永久ライセンス</li>
             <li>✓ 2台までアクティベーション</li>
             <li>✓ メールサポート</li>
             <li>✓ 無料アップデート</li>
           </ul>
-          <a href="https://www.liquid-block.com/contact" class="btn btn-primary">購入する</a>
-        </div>
-        <div class="pricing-card fade-up" style="animation-delay: 0.2s;">
-          <div class="pricing-label">STUDENT / EDUCATION</div>
-          <h3>学生・教育機関</h3>
-          <div class="pricing-price">
-            <span class="price-amount">¥5,500</span>
-            <span class="price-period">学生: 1年間 / 学校: 買い切り×台数</span>
+          <div class="pricing-sub-plans">
+            <span class="pricing-sub-item">学生・教育機関: <strong>¥5,500</strong>（要学生証）</span>
           </div>
-          <ul class="pricing-features">
-            <li>✓ 全機能利用可能</li>
-            <li>✓ 学生証提示で適用</li>
-            <li>✓ 学校一括導入対応</li>
-            <li>✓ ボリュームディスカウント</li>
-          </ul>
-          <a href="https://www.liquid-block.com/contact" class="btn btn-outline">お問い合わせ</a>
         </div>
+      </div>
+
+      <!-- ご利用の流れ -->
+      <div class="section-header fade-up" style="margin-top: 64px;">
+        <div class="section-label">HOW TO START</div>
+        <h2>ご利用の流れ</h2>
+      </div>
+      <div class="flow-steps fade-up">
+        <div class="flow-step">
+          <div class="flow-step-number">1</div>
+          <div class="flow-step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </div>
+          <h4>無料ダウンロード</h4>
+          <p>インストーラーをダウンロードして、すぐに使い始められます。</p>
+        </div>
+        <div class="flow-step-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-number">2</div>
+          <div class="flow-step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h4>14日間フル機能を体験</h4>
+          <p>すべての機能を制限なしでお試しください。クレジットカード不要。</p>
+        </div>
+        <div class="flow-step-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-number">3</div>
+          <div class="flow-step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+          </div>
+          <h4>アプリ内から購入</h4>
+          <p>気に入ったら、アプリ内の案内から簡単に購入。ライセンスキーがメールで届きます。</p>
+        </div>
+        <div class="flow-step-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-number">4</div>
+          <div class="flow-step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h4>永久に使える</h4>
+          <p>ライセンスキーを入力してアクティベーション。月額料金なし、ずっと使えます。</p>
+        </div>
+      </div>
+
+      <div class="flow-cta fade-up">
+        <a href="#download" class="btn btn-primary btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          まずは無料でダウンロード
+        </a>
+        <p class="flow-cta-note">14日間フル機能 ・ クレジットカード不要 ・ 自動課金なし</p>
       </div>
     </div>
   </section>
