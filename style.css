@@ -174,10 +174,12 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
-.hero-bg-image {
+.hero-bg-video {
   position: absolute;
   inset: 0;
-  background: url('app-screenshot.png') center center / cover no-repeat;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: brightness(0.3) saturate(0.5);
   z-index: 0;
 }
