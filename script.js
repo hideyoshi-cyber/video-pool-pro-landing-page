@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===== Share for Discount =====
 const shareUrl = 'https://hideyoshi-cyber.github.io/video-pool-pro-landing-page/';
 const shareText = '動画修正指示を劇的に効率化するデスクトップアプリ「Video Pool PRO」。サブスク不要の買い切り型で14日間無料トライアル！';
+let shareTimerStarted = false;
 
 function shareAndReveal(platform) {
   let url;
@@ -61,14 +62,47 @@ function shareAndReveal(platform) {
     case 'facebook':
       url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
       break;
+    case 'instagram':
+      // Instagram doesn't have a direct share URL; copy text and open Instagram
+      navigator.clipboard.writeText(shareText + ' ' + shareUrl);
+      url = 'https://www.instagram.com/';
+      break;
+    case 'threads':
+      url = `https://www.threads.net/intent/post?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
+      break;
     case 'line':
       url = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
       break;
   }
-  window.open(url, '_blank', 'width=600,height=400');
-  // Reveal the code
-  const reveal = document.getElementById('share-code-reveal');
-  if (reveal) reveal.style.display = 'block';
+  window.open(url, '_blank', 'width=600,height=500');
+
+  // Start 3-minute timer (only once)
+  if (!shareTimerStarted) {
+    shareTimerStarted = true;
+    document.getElementById('share-buttons').style.display = 'none';
+    const timerEl = document.getElementById('share-timer-state');
+    if (timerEl) timerEl.style.display = 'block';
+    startShareCountdown(180); // 3 minutes = 180 seconds
+  }
+}
+
+function startShareCountdown(seconds) {
+  const countdownEl = document.getElementById('share-countdown');
+  let remaining = seconds;
+
+  const interval = setInterval(() => {
+    remaining--;
+    const min = Math.floor(remaining / 60);
+    const sec = remaining % 60;
+    if (countdownEl) countdownEl.textContent = `${min}:${sec.toString().padStart(2, '0')}`;
+
+    if (remaining <= 0) {
+      clearInterval(interval);
+      // Hide timer, show code
+      document.getElementById('share-timer-state').style.display = 'none';
+      document.getElementById('share-code-reveal').style.display = 'block';
+    }
+  }, 1000);
 }
 
 function copyShareCode() {
@@ -83,3 +117,4 @@ function copyShareCode() {
     });
   }
 }
+

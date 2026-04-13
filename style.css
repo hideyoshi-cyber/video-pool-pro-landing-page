@@ -937,29 +937,126 @@ img { max-width: 100%; display: block; }
 /* ============ PRICING ============ */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1.3fr 1fr;
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .pricing-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 40px 32px;
+  border-radius: 20px;
+  padding: 36px 28px;
   text-align: center;
   transition: var(--transition);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .pricing-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-4px);
 }
 
+/* Featured PRO card */
 .pricing-card-featured {
   border-color: rgba(0, 168, 232, 0.3);
-  background: rgba(0, 168, 232, 0.04);
-  box-shadow: 0 0 80px rgba(0, 168, 232, 0.06);
+  background: linear-gradient(180deg, rgba(0, 168, 232, 0.06) 0%, rgba(4, 8, 16, 0.95) 100%);
+  box-shadow: 0 0 80px rgba(0, 168, 232, 0.08);
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.pricing-card-ribbon {
+  position: absolute;
+  top: -1px; right: 24px;
+  background: var(--gradient);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 0 0 8px 8px;
+  letter-spacing: 0.05em;
+}
+
+/* Student card */
+.pricing-card-student {
+  background: rgba(139, 92, 246, 0.04);
+  border-color: rgba(139, 92, 246, 0.15);
+  grid-row: 1;
+  grid-column: 1;
+}
+.pricing-card-student:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+/* Enterprise card */
+.pricing-card-enterprise {
+  background: rgba(34, 197, 94, 0.04);
+  border-color: rgba(34, 197, 94, 0.15);
+  grid-row: 1;
+  grid-column: 3;
+}
+.pricing-card-enterprise:hover {
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.pricing-card-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.pricing-card-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+.pricing-card-label-student { color: #a78bfa; }
+.pricing-card-label-enterprise { color: #4ade80; }
+
+.pricing-price-sm {
+  margin-bottom: 16px;
+}
+.price-amount-sm {
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+}
+.price-tax-sm {
+  font-size: 12px;
+  color: var(--text-dimmer);
+  font-weight: 400;
+}
+
+.pricing-card-desc {
+  color: var(--text-dim);
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.pricing-card-sub {
+  color: var(--text-dimmer);
+  font-size: 11px;
+  margin-bottom: 16px;
+}
+
+.pricing-cta {
+  margin-top: 24px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+.pricing-cta-sm {
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  padding: 12px;
+  margin-top: auto;
 }
 
 .pricing-badge {
@@ -973,62 +1070,69 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.12em;
   padding: 4px 16px;
   border-radius: 100px;
+  white-space: nowrap;
 }
 
-.pricing-label {
-  font-size: 10px;
+/* Promo banner inside PRO card */
+.pricing-promo {
+  margin-top: 16px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+.pricing-promo-title {
+  color: #f59e0b;
+  font-size: 0.65rem;
   font-weight: 800;
-  letter-spacing: 0.15em;
-  color: var(--text-dimmer);
-  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
 }
-
-.pricing-card h3 {
-  font-size: 22px;
+.pricing-promo-code {
+  color: #fff;
+  font-size: 0.95rem;
   font-weight: 900;
-  margin-bottom: 16px;
-  letter-spacing: -0.02em;
 }
-
-.price-amount {
-  font-size: 42px;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  display: block;
+.pricing-promo-code code {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fcd34d;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: monospace;
 }
-.pricing-card-featured .price-amount {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.pricing-promo-code span {
+  color: #f59e0b;
 }
-
-.price-period {
-  font-size: 12px;
-  color: var(--text-dimmer);
-  font-weight: 600;
-  display: block;
+.pricing-promo-calc {
+  color: var(--text-dim);
+  font-size: 0.7rem;
   margin-top: 4px;
 }
+.pricing-promo-calc strong {
+  color: #f59e0b;
+}
 
-.pricing-features {
+.pricing-note {
+  text-align: center;
+  color: var(--text-dimmer);
+  font-size: 0.75rem;
+  margin-top: 12px;
+}
+
+.pricing-features-compact {
   list-style: none;
   text-align: left;
-  margin: 28px 0;
+  margin: 24px 0 0;
+  padding: 0;
 }
-.pricing-features li {
+.pricing-features-compact li {
   font-size: 13px;
   color: var(--text-dim);
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border);
+  padding: 6px 0;
 }
-.pricing-features li:last-child { border-bottom: none; }
 
-.pricing-card .btn {
-  width: 100%;
-  justify-content: center;
-  padding: 12px;
-  font-size: 13px;
-}
 
 /* ============ FAQ ============ */
 .faq-list {
@@ -1290,6 +1394,61 @@ footer {
 .share-btn-line {
   background: #06c755;
   color: #fff;
+}
+
+.share-btn-ig {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff;
+}
+
+.share-btn-threads {
+  background: #000;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.share-section {
+  padding: 48px 0;
+}
+
+/* Timer state */
+.share-timer-state {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  animation: fadeSlideUp 0.5s ease;
+}
+
+.share-timer-icon {
+  margin-bottom: 16px;
+}
+
+.share-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.share-timer-text {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.share-timer-text strong {
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: 900;
+  font-family: 'Inter', monospace;
+}
+
+.share-timer-note {
+  color: var(--text-dimmer);
+  font-size: 11px;
 }
 
 .share-code-reveal {
