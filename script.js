@@ -40,4 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Embed mode: hide own footer when embedded in Wix (via ?embed=true)
+  if (new URLSearchParams(window.location.search).get('embed') === 'true') {
+    document.querySelector('footer')?.remove();
+    document.body.style.overflow = 'auto';
+  }
 });
