@@ -1370,13 +1370,43 @@ footer {
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
-  .nav-links { display: none; } /* TODO: hamburger menu */
-  
+  .nav-links { display: none; }
+
   .pain-grid,
   .features-grid,
-  .pricing-grid,
   .showcase-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Pricing: stack vertically, featured first */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  .pricing-card-featured {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .pricing-card-student {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .pricing-card-enterprise {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  /* Comparison: hide cloud column on mobile */
+  .comp-cloud-col,
+  .comp-cloud {
+    display: none;
+  }
+  .comp-pro-col,
+  .comp-pro {
+    width: 60%;
+  }
+  .comp-label-col,
+  .comp-label {
+    width: 40%;
   }
 
   .footer-grid {
@@ -1389,17 +1419,54 @@ footer {
     gap: 8px;
   }
 
-  .comparison-table th:last-child,
-  .comparison-table td:last-child {
-    display: none;
+  /* Share section mobile */
+  .share-box-inner {
+    padding: 32px 20px;
   }
+  .share-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 300px;
+  }
+  .share-btn:last-child {
+    grid-column: 1 / -1;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  .share-title {
+    font-size: 22px;
+  }
+
+  /* Section spacing */
+  .section { padding: 60px 0; }
+  .share-section { padding: 32px 0; }
 }
 
 @media (max-width: 480px) {
   #hero h1 { font-size: 28px; }
-  .section { padding: 80px 0; }
+  .section { padding: 60px 0; }
   .hero-actions { flex-direction: column; align-items: center; }
   .cta-buttons { flex-direction: column; align-items: center; }
+
+  /* Comparison: even tighter */
+  .comp-label,
+  .comp-pro {
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+
+  /* Pricing card padding */
+  .pricing-card {
+    padding: 28px 20px;
+  }
+
+  /* Share buttons single column */
+  .share-buttons {
+    grid-template-columns: 1fr;
+    max-width: 240px;
+  }
+  .share-btn:last-child {
+    max-width: none;
+  }
 }
 
 /* ===== Share for Discount ===== */
