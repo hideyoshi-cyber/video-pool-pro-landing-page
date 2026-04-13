@@ -344,6 +344,26 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
 }
 
+.hero-tagline {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 2;
+  text-align: center;
+  margin-bottom: 28px;
+  padding: 20px 0;
+  font-style: italic;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-tagline-accent {
+  color: var(--accent);
+  font-weight: 700;
+  font-style: normal;
+}
+
 /* ============ SCREENSHOT ============ */
 .hero-screenshot {
   position: relative;
