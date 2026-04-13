@@ -41,10 +41,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Embed mode: hide own footer when embedded in Wix (via ?embed=true)
+  // Embed mode: hide own footer and nav when embedded in Wix (via ?embed=true)
   if (new URLSearchParams(window.location.search).get('embed') === 'true') {
     document.querySelector('footer')?.remove();
+    document.getElementById('lp-nav')?.remove();
     document.body.style.overflow = 'auto';
+  }
+
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('lp-nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
+    });
   }
 });
 
