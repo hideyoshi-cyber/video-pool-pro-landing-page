@@ -47,3 +47,39 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'auto';
   }
 });
+
+// ===== Share for Discount =====
+const shareUrl = 'https://hideyoshi-cyber.github.io/video-pool-pro-landing-page/';
+const shareText = '動画修正指示を劇的に効率化するデスクトップアプリ「Video Pool PRO」。サブスク不要の買い切り型で14日間無料トライアル！';
+
+function shareAndReveal(platform) {
+  let url;
+  switch (platform) {
+    case 'twitter':
+      url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+      break;
+    case 'facebook':
+      url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+      break;
+    case 'line':
+      url = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
+      break;
+  }
+  window.open(url, '_blank', 'width=600,height=400');
+  // Reveal the code
+  const reveal = document.getElementById('share-code-reveal');
+  if (reveal) reveal.style.display = 'block';
+}
+
+function copyShareCode() {
+  const code = document.getElementById('share-code')?.textContent;
+  if (code) {
+    navigator.clipboard.writeText(code).then(() => {
+      const btn = document.getElementById('share-copy-btn');
+      if (btn) {
+        btn.textContent = 'コピー済み ✓';
+        setTimeout(() => { btn.textContent = 'コピー'; }, 2000);
+      }
+    });
+  }
+}
