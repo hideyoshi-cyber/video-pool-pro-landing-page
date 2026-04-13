@@ -1576,26 +1576,27 @@ footer {
 }
 
 .share-buttons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  max-width: 420px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
 
 .share-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 12px 20px;
-  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
-  font-size: 13px;
-  font-weight: 700;
   font-family: var(--font);
   transition: var(--transition);
+}
+
+.share-btn svg {
+  width: 20px;
+  height: 20px;
 }
 
 .share-btn:hover {
@@ -1754,24 +1755,15 @@ footer {
     margin-bottom: 20px;
   }
   .share-buttons {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    max-width: 100%;
+    gap: 12px;
   }
   .share-btn {
-    padding: 10px 12px;
-    font-size: 12px;
-    gap: 6px;
-    border-radius: 10px;
+    width: 44px;
+    height: 44px;
   }
   .share-btn svg {
-    width: 14px;
-    height: 14px;
-  }
-  .share-btn:nth-child(5) {
-    grid-column: 1 / -1;
-    max-width: 50%;
-    margin: 0 auto;
+    width: 18px;
+    height: 18px;
   }
   .share-badge {
     font-size: 10px;
@@ -1784,10 +1776,14 @@ footer {
     font-size: 18px;
   }
   .share-buttons {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    gap: 10px;
   }
-  .share-btn:nth-child(5) {
-    max-width: 60%;
+  .share-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .share-btn svg {
+    width: 16px;
+    height: 16px;
   }
 }
