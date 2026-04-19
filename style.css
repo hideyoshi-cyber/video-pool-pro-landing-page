@@ -621,6 +621,7 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-bottom: 40px;
+  align-items: stretch;
 }
 
 .showcase-card {
@@ -629,6 +630,8 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius);
   padding: 48px 36px;
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 .showcase-card:hover {
   border-color: var(--border-hover);
@@ -722,6 +725,7 @@ img { max-width: 100%; display: block; }
   color: var(--text-dim);
   line-height: 1.9;
   margin-bottom: 20px;
+  flex-grow: 1;
 }
 
 .showcase-tags {
