@@ -487,7 +487,7 @@ img { max-width: 100%; display: block; }
 
 /* ============ SECTIONS ============ */
 .section {
-  padding: 120px 0;
+  padding: 140px 0;
   position: relative;
 }
 
@@ -506,7 +506,7 @@ img { max-width: 100%; display: block; }
 
 .section-header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 72px;
 }
 
 .section-label {
@@ -517,7 +517,7 @@ img { max-width: 100%; display: block; }
   font-weight: 800;
   letter-spacing: 0.15em;
   color: var(--accent);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   text-transform: uppercase;
 }
 
@@ -530,18 +530,19 @@ img { max-width: 100%; display: block; }
 }
 
 .section-header h2 {
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(32px, 5vw, 52px);
   font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  margin-bottom: 16px;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin-bottom: 24px;
 }
 
 .section-header p {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--text-dim);
-  max-width: 500px;
+  max-width: 640px;
   margin: 0 auto;
+  line-height: 1.8;
 }
 
 /* ============ DEMO VIDEO ============ */
@@ -578,7 +579,7 @@ img { max-width: 100%; display: block; }
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 40px 32px;
+  padding: 44px 36px;
   text-align: left;
   transition: var(--transition);
   position: relative;
@@ -598,21 +599,22 @@ img { max-width: 100%; display: block; }
 }
 
 .pain-icon {
-  font-size: 40px;
-  margin-bottom: 20px;
+  font-size: 36px;
+  margin-bottom: 24px;
 }
 
 .pain-card h3 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+  line-height: 1.3;
 }
 
 .pain-card p {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-dim);
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 /* ============ SHOWCASE (PowerPoint + Cut Sheet) ============ */
@@ -714,17 +716,18 @@ img { max-width: 100%; display: block; }
 }
 
 .showcase-card h3 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 900;
-  margin-bottom: 14px;
-  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 .showcase-card p {
   font-size: 15px;
   color: var(--text-dim);
-  line-height: 1.9;
-  margin-bottom: 20px;
+  line-height: 2.0;
+  margin-bottom: 24px;
   flex-grow: 1;
 }
 
@@ -770,17 +773,18 @@ img { max-width: 100%; display: block; }
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 .feature-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 36px 28px;
+  padding: 40px 32px;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  text-align: left;
 }
 .feature-card::after {
   content: '';
@@ -808,21 +812,22 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: var(--accent);
 }
 
 .feature-card h3 {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 800;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   letter-spacing: -0.02em;
+  line-height: 1.4;
 }
 
 .feature-card p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-dim);
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 /* ============ PRICING ============ */
@@ -911,7 +916,7 @@ img { max-width: 100%; display: block; }
 
 .flow-step {
   text-align: left;
-  max-width: 240px;
+  max-width: 260px;
   padding: 0 16px;
 }
 
@@ -925,25 +930,26 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0 12px;
+  margin: 0 0 16px;
 }
 
 .flow-step-icon {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .flow-step h4 {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: #fff;
-  line-height: 1.5;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
 }
 
 .flow-step p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-dim);
-  line-height: 1.85;
+  line-height: 1.9;
 }
 
 .flow-step-arrow {
