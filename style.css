@@ -753,7 +753,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid rgba(59, 158, 255, 0.1);
   border-radius: var(--radius-sm);
   padding: 20px 28px;
-  text-align: center;
+  text-align: left;
 }
 
 .showcase-note p {
